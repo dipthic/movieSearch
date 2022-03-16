@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" />
+  <style>
+    body {
+      background-image: url("data:image/jpeg;base64,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");
+    }
+
+    #nav {
+      border-radius: 10px;
+      width: 90%;
+      height: 70px;
+      margin: auto;
+      display: flex;
+      box-shadow: 1px 3px 8px 8px hotpink;
+      justify-content: space-between;
+    }
+
+    #profile {
+      height: 50px;
+      width: 50px;
+      margin-right: 20px;
+      margin-top: 10px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    #profile>img {
+      width: 100%;
+      height: 100%;
+    }
+
+    #search {
+      margin-left: 50px;
+      margin-top: 15px;
+      display: flex;
+    }
+
+    input {
+      width: 400px;
+      height: 35px;
+      border-radius: 10px;
+      display: block;
+      font-size: 18px;
+      padding-left: 15px;
+      border: none;
+    }
+
+    #movies {
+      position: absolute;
+      /* background-color: white; */
+      top: 68px;
+      left: 37%;
+      width: 364px;
+
+      /* overflow: scroll; */
+      border-radius: 10px;
+    }
+
+    .firstDiv>img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+    }
+
+    .firstDiv>img:hover {
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+
+    button {
+      width: 10%;
+      height: 38px;
+      background: black;
+      /* border: 3px solid red; */
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      box-sizing: border-box;
+      margin-left: -35px;
+    }
+
+    .fa {
+      color: white;
+    }
+
+    #con {
+      width: 90%;
+      margin: auto;
+      margin-top: 40px;
+    }
+
+    #slideshow {
+      border-radius: 10px;
+      /* width: 100%; */
+      height: 400px;
+      overflow: hidden;
+      margin: auto;
+      box-shadow: 1px 3px 10px 10px hotpink;
+    }
+
+    #slideshow>img {
+      /* width: 100%; */
+      width: 100%;
+      height: 100%;
+    }
+
+    #bigMovie {
+      width: 60%;
+      margin: auto;
+      margin-top: 60px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background: navy;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .movieApp,
+    .scrollDiv {
+      display: flex;
+    }
+
+    .firstDiv {
+      padding: 10px;
+      width: 30%;
+      height: 120px;
+    }
+
+    .firstDiv>img:hover {
+      transform: scale(2, 2);
+    }
+
+    .subDiv {
+      width: 75%;
+      padding: 10px;
+    }
+
+    .subsDiv {
+      margin-left: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .firDiv {
+      padding: 20px;
+    }
+
+    .firDiv>img {
+      width: 300px;
+      height: 480px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .subsDiv>h2 {
+      color: orange;
+      font-size: 34px;
+    }
+
+    select {
+      background: black;
+      color: white;
+      border: 2px solid red;
+      border-radius: 3px;
+      margin-top: 30px;
+      padding: 10px;
+      font-size: 18px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .navb {
+      text-align: center;
+      /* width: 100%; */
+      margin: auto;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    #card>h1 {
+      color: white;
+      font-family: "Font Awesome 6 Free";
+      border-left: solid 6px red;
+      border-right: solid 6px red;
+      padding-left: 8px;
+      text-align: center;
+      margin: auto;
+      width: 45%;
+    }
+
+    /* #card {
+        width: 90%;
+        border-radius: 10px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      } */
+    img {
+      height: 70%;
+    }
+
+    .scrollDiv:hover {
+      background: rgb(241, 201, 201);
+    }
+
+    .subDiv:hover {
+      background: gold;
+    }
+
+    .proCard {
+      margin: 30px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      background-color: rgb(197, 153, 153);
+      color: white;
+      height: 500px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .proCard>h2,
+    h1,
+    h3 {
+      padding-right: 16px;
+      text-align: center;
+      margin: 10px;
+    }
+
+    h1 {
+      color: navy;
+      font-weight: bold;
+    }
+
+    .proCard>h2 {
+      color: crimson;
+    }
+
+    .profileData {
+      position: absolute;
+      right: 8%;
+      background: white;
+      padding: 10px;
+      width: 30vw;
+      margin-top: 10px;
+      border-radius: 10px;
+      display: none;
+      box-sizing: border-box;
+    }
+
+    .profileData>h2 {
+      display: block;
+      text-align: center;
+      font-family: "Tangerine", serif;
+      font-size: 48px;
+      text-shadow: 4px 4px 4px rgb(61, 107, 214);
+      margin: 0px;
+    }
+
+    .profileData>p {
+      font-family: "Tangerine", serif;
+      font-size: 25px;
+      text-shadow: 4px 4px 4px #ffb3b3;
+      margin: 0px;
+      font-weight: 700;
+    }
+
+    .profileData>button {
+      margin: 10px 0px 5px 0px;
+      width: 100%;
+      font-family: "Font Awesome 6 Free";
+      font-size: 33px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="nav">
+    <svg id="home_img" class="ipc-logo" xmlns="http://www.w3.org/2000/svg" width="64" height="32" viewBox="0 0 64 32"
+      version="1.1" style="height: 100%; margin-left: 20px">
+      <g fill="#F5C518">
+        <rect x="0" y="0" width="100%" height="100%" rx="4"></rect>
+      </g>
+      <g transform="translate(8.000000, 7.000000)" fill="#000000" fill-rule="nonzero">
+        <polygon points="0 18 5 18 5 0 0 0"></polygon>
+        <path
+          d="M15.6725178,0 L14.5534833,8.40846934 L13.8582008,3.83502426 C13.65661,2.37009263 13.4632474,1.09175121 13.278113,0 L7,0 L7,18 L11.2416347,18 L11.2580911,6.11380679 L13.0436094,18 L16.0633571,18 L17.7583653,5.8517865 L17.7707076,18 L22,18 L22,0 L15.6725178,0 Z">
+        </path>
+        <path
+          d="M24,18 L24,0 L31.8045586,0 C33.5693522,0 35,1.41994415 35,3.17660424 L35,14.8233958 C35,16.5777858 33.5716617,18 31.8045586,18 L24,18 Z M29.8322479,3.2395236 C29.6339219,3.13233348 29.2545158,3.08072342 28.7026524,3.08072342 L28.7026524,14.8914865 C29.4312846,14.8914865 29.8796736,14.7604764 30.0478195,14.4865461 C30.2159654,14.2165858 30.3021941,13.486105 30.3021941,12.2871637 L30.3021941,5.3078959 C30.3021941,4.49404499 30.272014,3.97397442 30.2159654,3.74371416 C30.1599168,3.5134539 30.0348852,3.34671372 29.8322479,3.2395236 Z">
+        </path>
+        <path
+          d="M44.4299079,4.50685823 L44.749518,4.50685823 C46.5447098,4.50685823 48,5.91267586 48,7.64486762 L48,14.8619906 C48,16.5950653 46.5451816,18 44.749518,18 L44.4299079,18 C43.3314617,18 42.3602746,17.4736618 41.7718697,16.6682739 L41.4838962,17.7687785 L37,17.7687785 L37,0 L41.7843263,0 L41.7843263,5.78053556 C42.4024982,5.01015739 43.3551514,4.50685823 44.4299079,4.50685823 Z M43.4055679,13.2842155 L43.4055679,9.01907814 C43.4055679,8.31433946 43.3603268,7.85185468 43.2660746,7.63896485 C43.1718224,7.42607505 42.7955881,7.2893916 42.5316822,7.2893916 C42.267776,7.2893916 41.8607934,7.40047379 41.7816216,7.58767002 L41.7816216,9.01907814 L41.7816216,13.4207851 L41.7816216,14.8074788 C41.8721037,15.0130276 42.2602358,15.1274059 42.5316822,15.1274059 C42.8031285,15.1274059 43.1982131,15.0166981 43.281155,14.8074788 C43.3640968,14.5982595 43.4055679,14.0880581 43.4055679,13.2842155 Z">
+        </path>
+      </g>
+    </svg>
+    <div id="search">
+      <input oninput="debounce(searchMovie,1000)" type="text" id="movie" placeholder="Search..." />
+      <button class="btn"><i class="fa fa-search"></i></button>
+    </div>
+    <div id="profile">
+      <img src="https://i.stack.imgur.com/34AD2.jpg" alt="" />
+    </div>
+  </div>
+  <div class="profileData"> </div>
+  <div class="navb">
+    <select name="" id="priceSort" onchange="handlePriceSort()">
+      <option value="">IMDb Order</option>
+      <option value="low">Low to High</option>ck
+      <option value="high">High to Low</option>
+    </select>
+
+    <select name="" id="nameSort" onchange="handleNameSort()">
+      <option value="">Name Sort</option>
+      <option value="asc">Ascending</option>
+      <option value="dsc">Descending</option>
+    </select>
+  </div>
+  <div id="con">
+    <div id="slideshow"></div>
+  </div>
+  <!-- scroll wala part -->
+  <div id="movies"> </div>
+  <!-- search and display particular movie -->
+  <div id="bigMovie"> </div>
+
+  <!-- display directly part -->
+  <div id="card">
+    <h1>Trending Movies</h1>
+    <div class="container"> </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  let profileData = document.querySelector(".profileData");
+  var logD = JSON.parse(localStorage.getItem("logData"));
+  if (logD != undefined) {
+    var { description, email, mobile, name, username } = logD;
+    let nameF = name.split(" ").shift();
+    profileData.innerHTML = `
+    <h2>Hi ,${nameF}</h2>
+      <p>📧 ${email}</p>
+      <p>☎️ ${mobile}</p>
+      <p>😎 ${description}</p>
+      <button onclick="logout()">Logout</button>
+      `;
+  }
+  function logout() {
+    profileData = undefined;
+    localStorage.removeItem("logData");
+    window.open("index.html", "_self");
+  }
+  document.querySelector("#profile").addEventListener("click", () => {
+    if (logD == undefined) window.open("login.html", "_self");
+    else noman();
+  });
+  var flage = true;
+  //slideshow part
+  function noman() {
+    if (flage) {
+      profileData.style.display = "block";
+      flage = false;
+    } else {
+      profileData.style.display = "none";
+      flage = true;
+    }
+  }
+  let id;
+  var i = 0;
+  Start();
+  function Start() {
+    let div = document.getElementById("slideshow");
+    div.innerHTML = null;
+
+    let images = [
+      "https://i.pinimg.com/originals/bf/16/ef/bf16ef6f86334298f4870e22dada6c84.jpg",
+      "https://d2kektcjb0ajja.cloudfront.net/images/posts/feature_images/000/000/072/large-1466557422-feature.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5SmfrnxahN9xx0l6TPkxLj9tnr-3UYAlmfSTPFgtFLbhu1Her-EwbAr1CxqIDoSVaef0&usqp=CAU",
+      "https://cdn.shopify.com/s/files/1/0969/9128/products/1917_-_Sam_Mendes_WW1_Epic_-_Hollywood_War_Film_Classic_English_Movie_Poster_81a3cd10-0023-439a-b461-c67381a81ecb.jpg?v=1582781193",
+    ];
+    let img = document.createElement("img");
+    img.src = images[0];
+    div.append(img);
+
+    id = setInterval(function () {
+      if (i === images.length) i = 0;
+      img.src = images[i];
+      div.append(img);
+      i++;
+    }, 3000);
+  }
+
+  function pause() {
+    clearInterval(id);
+  }
+  // normal movie display part
+  var movies = [
+    {
+      IMDb: "7.8",
+      release_date: "18 December 2009",
+      name: "Avatar",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo-RXiRRl7vl-3bPH1BXCPv_ng_5idHw2TFQ&usqp=CAU",
+    },
+    {
+      IMDb: "7.7",
+      release_date: "21 January 2011",
+      name: "Tangled",
+      image:
+        "https://upload.wikimedia.org/wikipedia/en/a/a8/Tangled_poster.jpg",
+    },
+    {
+      IMDb: "6.3",
+      release_date: "16 June 2017",
+      name: "Despicable Me 3",
+      image:
+        "https://images.moviesanywhere.com/44e16d9e2d0f8cdbdd1353dd1382e641/d99b2810-92cf-4fdf-b943-8bc468a6d21c.jpg",
+    },
+    {
+      IMDb: "7.6",
+      release_date: "23 November 2016",
+      name: "Moana",
+      image:
+        "https://lumiere-a.akamaihd.net/v1/images/p_moana_20530_214883e3.jpeg",
+    },
+    {
+      IMDb: "7.4",
+      release_date: "6 March 2020",
+      name: "Onward",
+      image:
+        "https://m.media-amazon.com/images/M/MV5BMTZlYzk3NzQtMmViYS00YWZmLTk5ZTEtNWE0NGVjM2MzYWU1XkEyXkFqcGdeQXVyNDg4NjY5OTQ@._V1_.jpg",
+    },
+    {
+      IMDb: "5.9",
+      release_date: "15 March 2019",
+      name: "Wonder Park",
+      image:
+        "https://static2.cbrimages.com/wordpress/wp-content/uploads/2020/06/Wonder-Park-1.jpg",
+    },
+    {
+      IMDb: "8.4",
+      release_date: "22 November 2017",
+      name: "Coco",
+      image:
+        "https://lumiere-a.akamaihd.net/v1/images/pt_coco_31b33206.jpeg?region=0%2C0%2C300%2C450",
+    },
+    {
+      IMDb: "7.6",
+      release_date: "15 June 2018",
+      name: "Incredibles 2",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUhjlKe6qAz1GNPsJBrVVu2XuNT0qY6nMYQ&usqp=CAU",
+    },
+    {
+      IMDb: "6.8",
+      release_date: "22 November 2019",
+      name: "Frozen II",
+      image:
+        "https://lumiere-a.akamaihd.net/v1/images/p_frozen2_19644_4c4b423d.jpeg",
+    },
+  ];
+
+  displayItem(movies);
+
+  function displayItem(movies) {
+    document.querySelector(".container").innerHTML = "";
+    movies.map(function (elem) {
+      var div = document.createElement("div");
+      div.setAttribute("class", "proCard");
+      var img = document.createElement("img");
+      img.setAttribute("src", elem.image);
+      img.setAttribute("width", "330px");
+      var h1 = document.createElement("h1");
+      h1.innerText = elem.name;
+      var h2 = document.createElement("h2");
+      h2.innerText = "IMDb Rate:-" + "  " + elem.IMDb;
+      var h3 = document.createElement("h3");
+      h3.innerText = "Release Date:" + "  " + elem.release_date;
+
+      div.append(img, h1, h2, h3);
+      document.querySelector(".container").append(div);
+    });
+  }
+
+  //    sorting part
+  function handlePriceSort() {
+    var selected = document.querySelector("#priceSort").value;
+    console.log(selected);
+    if (selected == "high") {
+      movies.sort(function (a, b) {
+        return Number(b.IMDb) - Number(a.IMDb);
+      });
+    }
+    if (selected == "low") {
+      movies.sort(function (a, b) {
+        return Number(a.IMDb) - Number(b.IMDb);
+      });
+    }
+    displayItem(movies);
+  }
+
+  function handleNameSort() {
+    var selected = document.querySelector("#nameSort").value;
+    console.log(selected);
+
+    if (selected == "asc") {
+      movies.sort(function (a, b) {
+        if (a.name > b.name) return 1;
+        if (a.name < b.name) return -1;
+        return 0;
+      });
+    }
+    if (selected == "dsc") {
+      movies.sort(function (a, b) {
+        if (a.name > b.name) return -1;
+        if (a.name < b.name) return 1;
+        return 0;
+      });
+    }
+    displayItem(movies);
+  }
+
+  // search movie part
+
+  document
+    .querySelector(".btn")
+    .addEventListener("click", appendMoviesbySearch);
+  let inputValue = document
+    .querySelector("#search")
+    .addEventListener("submit", searchMovie);
+
+  let movies_div = document.getElementById("movies");
+  var movie1 = document.getElementById("bigMovie");
+  let movie_waiting; // variable created globally for debouncing function.
+  var movieInfoList = [];
+
+  function appendMoviesbySearch() {
+    movies_div.innerHTML = null;
+    movies_div.style.display = "none";
+    appendMovies1(movieInfoList);
+  }
+
+  async function searchMovie() {
+    try {
+      let movie = document.getElementById("movie").value; // search bar element taking here.
+
+      if (movie.length <= 2) {
+        // first two letters shows too many results so putted on false.
+        movies_div.innerHTML = null;
+        movies_div.style.display = "none"; // scroll bar none
+        return false;
+      }
+      let response = await fetch(
+        `http://www.omdbapi.com/?&apikey=d806bd70&s=${movie}`
+      ); // ${movie} this making dynamically.
+      let data = await response.json();
+      console.log("data:", data);
+      let movies_arr = data.Search;
+      console.log("movies_arr:", movies_arr);
+      appendMovies(movies_arr);
+      getId(movies_arr);
+    } catch (err) {
+      console.log("err:", err);
+    }
+  }
+
+  // second api fecthing
+  function getId(id) {
+    id.forEach(function (el) {
+      // each object access to get imdb values
+      var imdb = el.imdbID;
+      getImdbId(imdb);
+    });
+
+    async function getImdbId(imdb) {
+      try {
+        let movie = document.getElementById("movie").value;
+
+        let response = await fetch(
+          `http://www.omdbapi.com/?apikey=d806bd70&i=${imdb}`
+        ); // ${imdb} this making dynamically.
+        let dataID = await response.json();
+        console.log("dataId:", dataID);
+        movieInfoList.push(dataID);
+      } catch (error) {
+        console.log("error:", error);
+      }
+    }
+  }
+
+  // display details in scroll wala part.
+
+  function appendMovies(movies) {
+    movies_div.innerHTML = null; // refreshing the results.
+
+    if (movies === undefined) {
+      // if came any error like forEach is not a function then use this condition.
+
+      return false;
+    }
+    movies.forEach(function (element) {
+      let div = document.createElement("div");
+      div.setAttribute("class", "scrollDiv");
+
+      let div1 = document.createElement("div");
+      div1.setAttribute("class", "firstDiv");
+
+      let div2 = document.createElement("div");
+      div2.setAttribute("class", "subDiv");
+
+      let h2 = document.createElement("h2");
+      h2.innerText = element.Title;
+      h2.addEventListener("click", () => {
+        displaySelectedMovie(element.Title);
+      });
+      let p = document.createElement("p");
+      p.innerText = element.Year;
+
+      let img = document.createElement("img");
+      img.src = element.Poster;
+      img.addEventListener("click", () => {
+        displaySelectedMovie(element.Poster);
+      });
+
+      div1.append(img);
+      div2.append(h2, p);
+      div.append(div1, div2);
+      movies_div.append(div);
+      movies_div.style.overflow = "scroll";
+      movies_div.style.background = "white";
+      movies_div.style.height = "300px";
+    });
+  }
+
+  // in scroll part when ever I click the img or name it will display all details in another div.
+  function displaySelectedMovie(moveTitle) {
+    console.log("Calling displaySelectedMovie ", moveTitle);
+    console.log("movieInfoList:", movieInfoList);
+
+    movie1.innerHTML = null;
+    movies_div.innerHTML = null;
+
+    movieInfoList.forEach(function (elements) {
+      if (moveTitle == elements.Title || moveTitle == elements.Poster) {
+        console.log("Found the movie and the obj is ", elements);
+        let div = document.createElement("div");
+        div.setAttribute("class", "movieApp");
+
+        let div1 = document.createElement("div");
+        div1.setAttribute("class", "firDiv");
+
+        let div2 = document.createElement("div");
+        div2.setAttribute("class", "subsDiv");
+
+        let h2 = document.createElement("h2");
+        h2.innerText = elements.Title;
+
+        let p = document.createElement("p");
+        p.innerText = "Year:   " + elements.Year;
+
+        let p1 = document.createElement("p");
+        p1.innerText = "Type:   " + elements.Type;
+
+        let img = document.createElement("img");
+        img.src = elements.Poster;
+
+        let p2 = document.createElement("p");
+        p2.innerText = "Plot:   " + elements.Plot;
+
+        let p3 = document.createElement("p");
+        p3.innerText = "Genre:  " + elements.Genre;
+
+        let p4 = document.createElement("p");
+        p4.innerText = "Language:    " + elements.Language;
+
+        let p5 = document.createElement("p");
+        p5.innerText = "Released:   " + elements.Released;
+
+        let p6 = document.createElement("p");
+        p6.innerText = "ImdbRating:   " + elements.imdbRating;
+
+        div1.append(img);
+        div2.append(h2, p6, p1, p3, p5, p, p4, p2);
+
+        div.append(div1, div2);
+        movie1.append(div);
+      }
+    });
+  }
+
+  // when ever i click the search button i will display all movies details in div
+
+  function appendMovies1(move1) {
+    console.log("Calling appendMovies1");
+    // console.log(move);
+
+    movies_div.innerHTML = null;
+    movie1.innerHTML = null;
+
+    move1.forEach(function (move) {
+      let div = document.createElement("div");
+      div.setAttribute("class", "movieApp");
+
+      let div1 = document.createElement("div");
+      div1.setAttribute("class", "firDiv");
+
+      let div2 = document.createElement("div");
+      div2.setAttribute("class", "subsDiv");
+
+      let h2 = document.createElement("h2");
+      h2.innerText = move.Title;
+
+      let p = document.createElement("p");
+      p.innerText = "Year:   " + move.Year;
+
+      let p1 = document.createElement("p");
+      p1.innerText = "Type:   " + move.Type;
+
+      let img = document.createElement("img");
+      img.src = move.Poster;
+
+      let p2 = document.createElement("p");
+      p2.innerText = "Plot:   " + move.Plot;
+
+      let p3 = document.createElement("p");
+      p3.innerText = "Genre:  " + move.Genre;
+
+      let p4 = document.createElement("p");
+      p4.innerText = "Language:    " + move.Language;
+
+      let p5 = document.createElement("p");
+      p5.innerText = "Released:   " + move.Released;
+
+      let p6 = document.createElement("p");
+      p6.innerText = "ImdbRating:   " + move.imdbRating;
+
+      div1.append(img);
+      div2.append(h2, p6, p1, p3, p5, p, p4, p2);
+
+      div.append(div1, div2);
+      movie1.append(div);
+    });
+
+    movieInfoList = [];
+  }
+
+  // debouncing function.
+
+  function debounce(func, delay) {
+    if (movie_waiting) {
+      clearTimeout(movie_waiting);
+    }
+
+    movie_waiting = setTimeout(() => {
+      func();
+    }, delay);
+  }
+</script>
